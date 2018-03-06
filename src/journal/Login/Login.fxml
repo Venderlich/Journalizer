@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="400.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="journal.Login.LoginController">
+    <stylesheets>
+        <URL value="@login.css" />
+    </stylesheets>
+   <children>
+      <Label fx:id="isConnected" layoutX="162.0" layoutY="117.0" prefHeight="17.0" prefWidth="555.0" text="Connecter a La base de Données " />
+
+      <TextField fx:id="txtUsername" layoutX="162.0" layoutY="170.0" promptText="Nom d'utilisateur">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      
+      <PasswordField fx:id="txtPassword" layoutX="162.0" layoutY="213.0" promptText="Mot de Passe">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </PasswordField>
+      
+      <Button layoutX="191.0" layoutY="263.0" mnemonicParsing="false" onAction="#login" text="Se Connecter">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      
+   </children>
+</AnchorPane>

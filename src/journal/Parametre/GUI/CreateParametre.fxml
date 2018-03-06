@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="journal.Parametre.GUI.CreateParametreController">
+<Button layoutX="86.0" layoutY="126.0" mnemonicParsing="false" onAction="#createVarObjectif" text="Valider">
+    <font>
+        <Font size="16.0" />
+    </font>
+</Button>
+<Label fx:id="lblInfoObjectif" alignment="CENTER" layoutX="86.0" layoutY="53.0" text="Initialiser la variable d'objectif" textAlignment="CENTER" wrapText="false" />
+<Spinner id="spnObjectif" fx:id="spnObjectif" amountToStepBy="1" editable="true" initialValue="0" layoutX="86.0" layoutY="85.0" max="600" min="0" />
+
+<Button layoutX="374.0" layoutY="126.0" mnemonicParsing="false" onAction="#createVolumeHorraire" text="Valider">
+    <font>
+        <Font size="16.0" />
+    </font>
+</Button>
+<Label fx:id="lblInfoHorraire" alignment="CENTER" layoutX="374.0" layoutY="53.0" text="Initialiser le Volume Horraire" textAlignment="CENTER" wrapText="false" />
+    <TextField fx:id="txtHorraire" layoutX="374.0" layoutY="79.0" promptText="Inserer la variable d'objectif Horraire">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </TextField>
+
+</AnchorPane>

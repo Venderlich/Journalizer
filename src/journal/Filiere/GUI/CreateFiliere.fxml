@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="journal.Filiere.GUI.CreateFiliereController">
+     <Button layoutX="190.0" layoutY="173.0" mnemonicParsing="false" onAction="#createFiliere" text="Valider">
+         <font>
+             <Font size="16.0" />
+         </font>
+     </Button>
+     <Label fx:id="lblInfo" alignment="CENTER" layoutX="195.0" layoutY="53.0" text="Ajouter une filiere" textAlignment="CENTER" wrapText="false" />
+     <TextField fx:id="txtFiliere" layoutX="190.0" layoutY="77.0" promptText="Inserer une filiere">
+         <font>
+             <Font size="16.0" />
+         </font>
+     </TextField>
+   <ComboBox fx:id="comMatiere" layoutX="195.0" layoutY="128.0" prefWidth="150.0" />
+</AnchorPane>

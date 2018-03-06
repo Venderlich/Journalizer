@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Journal-Nouvelle-Architecture">
+    <output-path>$PROJECT_DIR$/out/artifacts/Journal_Nouvelle_Architecture</output-path>
+    <root id="root">
+      <element id="archive" name="Journal_Nouvelle_Architecture.jar">
+        <element id="module-output" name="Journal-Nouvelle-Architecture" />
+      </element>
+    </root>
+  </artifact>
+</component>
