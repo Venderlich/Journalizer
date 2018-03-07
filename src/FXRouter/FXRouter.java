@@ -23,7 +23,6 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
 
-
 /**
  * FXRouter allows to manage scenes switching on JavaFX Application with an easy API
  * Inspired by Angular JS $routeProvider
