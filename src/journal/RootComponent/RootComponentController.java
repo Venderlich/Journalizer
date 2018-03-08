@@ -114,7 +114,15 @@ public class RootComponentController implements Initializable {
         }
     }
 
-
+    @FXML
+    private void goToInsertCour(ActionEvent event) throws Exception {
+        try {
+            FXRouter.getInstance().bindRoutingNode(routingNode);
+            FXRouter.getInstance().goTo(Routes.INSERT_COUR);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     @FXML
     private void logOut(ActionEvent event) throws Exception {
         try {

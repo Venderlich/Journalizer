@@ -30,7 +30,7 @@ CREATE TABLE Filiere(
 CREATE TABLE Seance(
     ID INTEGER PRIMARY KEY,
     Commentaire VARCHAR,
-    dateSeance DATE,
+    dateSeance VARCHAR,
     Temps INTEGER,
     IDFiliere INTEGER,
     IDTypeDeCour INTEGER,
