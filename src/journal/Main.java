@@ -55,6 +55,7 @@ public class Main extends Application {
                 .when(Routes.READ_MATIERE, "Matiere/GUI/ReadMatiere.fxml")
                 .when(Routes.READ_FILIERE, "Filiere/GUI/ReadFiliere.fxml")
                 .when(Routes.READ_TYPEDECOUR, "TypeDeCour/GUI/ReadTypeDeCour.fxml")
+                .when(Routes.READ_COUR, "Cour/GUI/ReadCour.fxml")
                 .goTo(Routes.LOGIN);
     }
 }

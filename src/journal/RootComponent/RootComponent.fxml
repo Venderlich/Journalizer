@@ -23,7 +23,7 @@
         <MenuBar VBox.vgrow="NEVER">
             <Menu mnemonicParsing="false" text="Cour">
                 <MenuItem mnemonicParsing="false" text="Inserer" onAction="#goToInsertCour"/>
-                <MenuItem mnemonicParsing="false" text="Voir les cours"/>
+                <MenuItem mnemonicParsing="false" text="Voir les cours" onAction="#goToReadCour"/>
             </Menu>
             <Menu mnemonicParsing="false" text="Matiere">
                 <MenuItem mnemonicParsing="false" text="Inserer" onAction="#goToInsertMatiere"/>

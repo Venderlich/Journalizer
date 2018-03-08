@@ -123,6 +123,17 @@ public class RootComponentController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void goToReadCour(ActionEvent event) throws Exception {
+        try {
+            FXRouter.getInstance().bindRoutingNode(routingNode);
+            FXRouter.getInstance().goTo(Routes.READ_COUR);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @FXML
     private void logOut(ActionEvent event) throws Exception {
         try {

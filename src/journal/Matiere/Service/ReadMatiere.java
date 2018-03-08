@@ -41,4 +41,30 @@ public class ReadMatiere extends ArrayList {
         return  listMatiere;
     }
 
+    public Matiere  matiereById(Integer idSearch) throws SQLException {
+        Matiere MatiereSearch = new Matiere();
+        String query = "select * from Matiere where ID = ?";
+        PreparedStatement preparedStatement = null;
+        ResultSet result = null;
+
+        try {
+            preparedStatement = conn.get().prepareStatement(query);
+            preparedStatement.setInt(1,idSearch);
+            result = preparedStatement.executeQuery();
+            MatiereSearch.setId(result.getInt("ID"));
+            MatiereSearch.setLabel(result.getString("LabelMatiere"));
+
+        } catch (SQLException e) {
+
+        } finally {
+            assert preparedStatement != null;
+            assert result != null;
+            preparedStatement.close();
+            result.close();
+        }
+        return  MatiereSearch;
+    }
+
+
+
 }

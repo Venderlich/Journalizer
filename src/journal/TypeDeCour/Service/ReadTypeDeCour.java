@@ -42,4 +42,29 @@ public class ReadTypeDeCour {
         }
         return  listTypeDeCour;
     }
+
+    public TypeDeCour typeDeCourById(Integer idSearch) throws SQLException {
+        TypeDeCour TypeDeCourSearch = new TypeDeCour();
+        String query = "select * from TypeDeCour where ID = ?";
+        PreparedStatement preparedStatement = null;
+        ResultSet result = null;
+
+        try {
+            preparedStatement = conn.get().prepareStatement(query);
+            preparedStatement.setInt(1,idSearch);
+            result = preparedStatement.executeQuery();
+            TypeDeCourSearch.setId(result.getInt("ID"));
+            TypeDeCourSearch.setLabel(result.getString("LabelTDC"));
+            TypeDeCourSearch.setRapport(result.getDouble("Rapport"));
+
+        } catch (SQLException e) {
+
+        } finally {
+            assert preparedStatement != null;
+            assert result != null;
+            preparedStatement.close();
+            result.close();
+        }
+        return  TypeDeCourSearch;
+    }
 }

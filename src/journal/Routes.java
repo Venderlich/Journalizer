@@ -11,4 +11,5 @@ public class Routes {
     public static final String READ_MATIERE ="again and again and again and again";
     public static final String READ_FILIERE ="I did explain again ?";
     public static final String READ_TYPEDECOUR ="lolilol ?";
+    public static final String READ_COUR ="lolilollo ?";
 }

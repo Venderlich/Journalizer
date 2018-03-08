@@ -12,7 +12,7 @@ public class ReadFiliere {
 
     SQLiteConnectionProvider conn = new SQLiteConnectionProvider();
 
-    private Filiere rsToFiliere(ResultSet rs) throws SQLException {
+    public Filiere rsToFiliere(ResultSet rs) throws SQLException {
         Filiere fil = new Filiere();
         fil.setId(rs.getInt("ID"));
         fil.setLabel(rs.getString("LabelFiliere"));
@@ -42,6 +42,31 @@ public class ReadFiliere {
         }
         return  listFiliere;
     }
+
+    public Filiere filiereById(Integer idSearch) throws SQLException {
+        Filiere FiliereSearch = new Filiere();
+        String query = "select * from Filiere Where ID = ?";
+        PreparedStatement preparedStatement = null;
+        ResultSet result = null;
+
+        try {
+            preparedStatement = conn.get().prepareStatement(query);
+            preparedStatement.setInt(1,idSearch);
+            result = preparedStatement.executeQuery();
+            FiliereSearch.setId(result.getInt("ID"));
+            FiliereSearch.setLabel(result.getString("LabelFiliere"));
+
+        } catch (SQLException e) {
+
+        } finally {
+            assert preparedStatement != null;
+            assert result != null;
+            preparedStatement.close();
+            result.close();
+        }
+        return  FiliereSearch;
+    }
+
 
 //    public ArrayList<Filiere> listFiliere() throws SQLException {
 //        ArrayList<Filiere> listFiliere = new ArrayList<>();
