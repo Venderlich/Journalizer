@@ -179,7 +179,7 @@ public final class FXRouter {
 
     private void loadInNode(Parent resource) {
         routingNode.getChildren().clear();
-        routingNode.getChildren().add(resource);
+        routingNode.getChildren().add( resource);
     }
 
     private void loadInWindow(SceneConfiguration scene, Parent resource) {

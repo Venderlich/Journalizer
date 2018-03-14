@@ -42,8 +42,9 @@ public class CreateTypeDeCourController implements Initializable{
     }
     public void createTypeDeCour(ActionEvent event){
         try {
-            creator.CreateTypeDeCours(txtTDC.getText(),Double.parseDouble(txtRapport.getText()));
-            lblInfo.setText("Vous avez inserez la filiére " + txtTDC.getText());
+                creator.CreateTypeDeCours(txtTDC.getText(),Double.parseDouble(txtRapport.getText()));
+                lblInfo.setText("Vous avez inserez la filiére " + txtTDC.getText());
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

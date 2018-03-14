@@ -1,71 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.SeparatorMenuItem?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
-
 <?import javafx.scene.layout.BorderPane?>
-<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="journal.RootComponent.RootComponentController">
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="journal.RootComponent.RootComponentController">
     <top>
         <MenuBar VBox.vgrow="NEVER">
             <Menu mnemonicParsing="false" text="Cour">
-                <MenuItem mnemonicParsing="false" text="Inserer" onAction="#goToInsertCour"/>
-                <MenuItem mnemonicParsing="false" text="Voir les cours" onAction="#goToReadCour"/>
+                <MenuItem mnemonicParsing="false" onAction="#goToInsertCour" text="Inserer" />
+                <MenuItem mnemonicParsing="false" onAction="#goToReadCour" text="Voir les cours" />
             </Menu>
             <Menu mnemonicParsing="false" text="Matiere">
-                <MenuItem mnemonicParsing="false" text="Inserer" onAction="#goToInsertMatiere"/>
-                <MenuItem mnemonicParsing="false" text="Voir les Matiere" onAction="#goToReadMatiere"/>
+                <MenuItem mnemonicParsing="false" onAction="#goToInsertMatiere" text="Inserer" />
+                <MenuItem mnemonicParsing="false" onAction="#goToReadMatiere" text="Voir les Matiere" />
             </Menu>
             <Menu mnemonicParsing="false" text="Filiere">
-                <MenuItem mnemonicParsing="false" text="Inserer" onAction="#goToInsertFiliere"/>
-                <MenuItem mnemonicParsing="false" text="Voir les Filiere" onAction="#goToReadFiliere"/>
+                <MenuItem mnemonicParsing="false" onAction="#goToInsertFiliere" text="Inserer" />
+                <MenuItem mnemonicParsing="false" onAction="#goToReadFiliere" text="Voir les Filiere" />
             </Menu>
             <Menu mnemonicParsing="false" text="Parametre">
-                <MenuItem mnemonicParsing="false" text="Initialiser les Parametre" onAction="#goToInsertParametre" />
+                <MenuItem mnemonicParsing="false" onAction="#goToInsertParametre" text="Initialiser les Parametre" />
             </Menu>
             <Menu mnemonicParsing="false" text="Type de Cour">
-                <MenuItem mnemonicParsing="false" text="Inserer un Type de Cour" onAction="#goToInsertTypeDeCour" />
-                <MenuItem mnemonicParsing="false" text="Voir les Type de Cour" onAction="#goToReadTypeDeCour"/>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Deconnexion">
-                <MenuItem mnemonicParsing="false" text="Deconnexion" onAction="#logOut"/>
+                <MenuItem mnemonicParsing="false" onAction="#goToInsertTypeDeCour" text="Inserer un Type de Cour" />
+                <MenuItem mnemonicParsing="false" onAction="#goToReadTypeDeCour" text="Voir les Type de Cour" />
             </Menu>
         </MenuBar>
     </top>
+   <center>
+      <AnchorPane fx:id="routingNode" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <left>
+      <AnchorPane prefHeight="575.0" prefWidth="119.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <BorderPane prefHeight="575.0" prefWidth="107.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <AnchorPane prefHeight="127.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
+   </bottom>
 
-    <center>
-        <Pane fx:id="routingNode"/>
-    </center>
-
-    <bottom>
-        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
-            <padding>
-                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
-            </padding>
-            <Label maxHeight="1.7976931323157E308" text="Left status" HBox.hgrow="ALWAYS">
-                <font>
-                    <Font size="11.0" fx:id="x3"/>
-                </font>
-                <textFill>
-                    <Color blue="0.625" green="0.625" red="0.625" fx:id="x4"/>
-                </textFill>
-            </Label>
-            <Pane HBox.hgrow="ALWAYS"/>
-            <Label font="$x3" text="Right status" textFill="$x4" HBox.hgrow="NEVER"/>
-        </HBox>
-    </bottom>
 
 </BorderPane>

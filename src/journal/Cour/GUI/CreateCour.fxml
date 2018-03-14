@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="journal.Cour.GUI.CreateCourController">
+<AnchorPane prefHeight="450.0" prefWidth="633.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="journal.Cour.GUI.CreateCourController">
       <ComboBox fx:id="comboMatiere" layoutX="41.0" layoutY="284.0" prefWidth="150.0" />
       <ComboBox fx:id="comboFiliere" layoutX="41.0" layoutY="340.0" prefWidth="150.0" />
       <ComboBox fx:id="comboTdc" layoutX="198.0" layoutY="284.0" prefWidth="150.0" />
