@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73f4d6ac-2841-4546-ba21-940cbac4bd3a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/journal.sqlite" afterPath="$PROJECT_DIR$/journal.sqlite" />
-      <change beforePath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/CreateCourController.class" afterPath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/CreateCourController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/DataClass/CourObservable.class" afterPath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/DataClass/CourObservable.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/ReadCour.fxml" afterPath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/ReadCour.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/ReadCourController$1.class" afterPath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/ReadCourController$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/ReadCourController$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/ReadCourController$ButtonCell$1.class" afterPath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/ReadCourController$ButtonCell$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/ReadCourController$ButtonCell.class" afterPath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/ReadCourController$ButtonCell.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/ReadCourController.class" afterPath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/GUI/ReadCourController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/Service/ReadCour.class" afterPath="$PROJECT_DIR$/out/production/Journal-Nouvelle-Architecture/journal/Cour/Service/ReadCour.class" />
       <change beforePath="$PROJECT_DIR$/src/journal/Cour/GUI/CreateCourController.java" afterPath="$PROJECT_DIR$/src/journal/Cour/GUI/CreateCourController.java" />
-      <change beforePath="$PROJECT_DIR$/src/journal/Cour/GUI/DataClass/CourObservable.java" afterPath="$PROJECT_DIR$/src/journal/Cour/GUI/DataClass/CourObservable.java" />
-      <change beforePath="$PROJECT_DIR$/src/journal/Cour/GUI/ReadCour.fxml" afterPath="$PROJECT_DIR$/src/journal/Cour/GUI/ReadCour.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/journal/Cour/GUI/ReadCourController.java" afterPath="$PROJECT_DIR$/src/journal/Cour/GUI/ReadCourController.java" />
-      <change beforePath="$PROJECT_DIR$/src/journal/Cour/Service/DeleteCour.java" afterPath="$PROJECT_DIR$/src/journal/Cour/Service/DeleteCour.java" />
-      <change beforePath="$PROJECT_DIR$/src/journal/Cour/Service/ReadCour.java" afterPath="$PROJECT_DIR$/src/journal/Cour/Service/ReadCour.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +39,8 @@
       <file leaf-file-name="CreateCourController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/journal/Cour/GUI/CreateCourController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="117" column="141" lean-forward="false" selection-start-line="117" selection-start-column="141" selection-end-line="117" selection-end-column="141" />
+            <state relative-caret-position="212">
+              <caret line="120" column="21" lean-forward="true" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -446,7 +430,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921347" sideWeight="0.51711494" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921347" sideWeight="0.5195599" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -464,8 +448,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921347" sideWeight="0.4828851" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.49755502" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921347" sideWeight="0.4804401" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.49511003" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -683,8 +667,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/journal/Cour/GUI/CreateCourController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="117" column="141" lean-forward="false" selection-start-line="117" selection-start-column="141" selection-end-line="117" selection-end-column="141" />
+        <state relative-caret-position="212">
+          <caret line="120" column="21" lean-forward="true" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
           <folding />
         </state>
       </provider>

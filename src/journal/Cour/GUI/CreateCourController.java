@@ -22,6 +22,8 @@ import journal.Matiere.Service.Matiere;
 import journal.Matiere.Service.ReadMatiere;
 import journal.TypeDeCour.Service.ReadTypeDeCour;
 import journal.TypeDeCour.Service.TypeDeCour;
+import sun.font.TrueTypeFont;
+
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -115,7 +117,7 @@ public class CreateCourController implements Initializable {
     }
         CreateCour creator = new CreateCour();
         public void createCour(ActionEvent event){
-            if(dateChecker(datePicker.getEditor().getText()) && horraireChecked(txtHorraire.getText()) && commentChecked(txtComment.getText())){
+            if(isFormIsValid()){
                 try {
                     creator.ServiceCreateCour(txtComment.getText(),datePicker.getEditor().getText(),Integer.parseInt(txtHorraire.getText()),comboFiliere.getSelectionModel().getSelectedItem().getID(),comboTdc.getSelectionModel().getSelectedItem().getID(),comboMatiere.getSelectionModel().getSelectedItem().getID());
                     lblTitle.setText("vous avez inserer la seance de " + comboTdc.getSelectionModel().getSelectedItem().getLabel() + " de " + comboMatiere.getSelectionModel().getSelectedItem().getLabel() + " du " + datePicker.getEditor().getText() + "dispenser a la classe de " + comboFiliere.getSelectionModel().getSelectedItem().getLabel() );
@@ -127,6 +129,20 @@ public class CreateCourController implements Initializable {
             }
 
         }
+
+        public boolean isFormIsValid(){
+            String dateChecked= datePicker.getEditor().getText();
+            String commentChecked= txtComment.getText();
+            String horraireChecked= txtHorraire.getText();
+            Boolean isReady = false;
+            if(dateChecker(dateChecked) && commentChecked(commentChecked) && horraireChecked(horraireChecked)){
+                isReady = true;
+            }else{
+                isReady = false;
+            }
+            return isReady;
+        }
+
 
         public Boolean dateChecker(String dateChecked){
             String checkedDate = dateChecked;
