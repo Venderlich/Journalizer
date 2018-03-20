@@ -47,7 +47,7 @@ public class CourObservable {
 
     public String getFiliere(){
         return filiere.get();
-    }
+    }:
 
     public void setFiliere(String filiere){
         this.filiere.set(filiere);

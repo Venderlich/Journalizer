@@ -15,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 import journal.Cour.GUI.DataClass.CourObservable;
 
+import journal.Cour.Service.DeleteCour;
 import journal.Cour.Service.ReadCour;
 
 import java.net.URL;
@@ -79,7 +80,6 @@ public class ReadCourController implements Initializable {
         tdcCol.setCellValueFactory(new PropertyValueFactory<CourObservable,String>("typeDeCour"));
         matiereCol.setCellValueFactory(new PropertyValueFactory<CourObservable,String>("matiere"));
         commentaireCol.setCellValueFactory(new PropertyValueFactory<CourObservable,String>("commentaire"));
-
         ButonnCol.setCellFactory(
                 new Callback<TableColumn<CourObservable, Boolean>, TableCell<CourObservable, Boolean>>() {
 
@@ -96,15 +96,16 @@ public class ReadCourController implements Initializable {
     private class ButtonCell extends TableCell<CourObservable, Boolean> {
 
         final Button cellButton = new Button("Delete");
-
+        DeleteCour deletor = new DeleteCour();
         ButtonCell() {
-
             cellButton.setOnAction(new EventHandler<ActionEvent>() {
-
                 @Override
                 public void handle(ActionEvent t) {
-                    // do something when button clicked
-                    //...
+                    try {
+                        deletor.ServiceDeleteCour(1);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
             });
         }
