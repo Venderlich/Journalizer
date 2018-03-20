@@ -21,7 +21,36 @@ public class CourObservable {
         this.commentaire= new SimpleStringProperty(commentaire);
     }
 
+    public SimpleStringProperty idProperty() {
+        return id;
+    }
+
+    public SimpleStringProperty dateProperty() {
+        return date;
+    }
+
+    public SimpleStringProperty tempsProperty() {
+        return temps;
+    }
+
+    public SimpleStringProperty filiereProperty() {
+        return filiere;
+    }
+
+    public SimpleStringProperty typeDeCourProperty() {
+        return typeDeCour;
+    }
+
+    public SimpleStringProperty matiereProperty() {
+        return matiere;
+    }
+
+    public SimpleStringProperty commentaireProperty() {
+        return commentaire;
+    }
+
     public String getId(){
+
         return id.get();
     }
 
@@ -47,7 +76,7 @@ public class CourObservable {
 
     public String getFiliere(){
         return filiere.get();
-    }:
+    }
 
     public void setFiliere(String filiere){
         this.filiere.set(filiere);

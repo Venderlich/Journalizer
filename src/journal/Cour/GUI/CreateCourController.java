@@ -1,5 +1,6 @@
 package journal.Cour.GUI;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -114,13 +115,50 @@ public class CreateCourController implements Initializable {
     }
         CreateCour creator = new CreateCour();
         public void createCour(ActionEvent event){
-        try {
-            creator.ServiceCreateCour(txtComment.getText(),datePicker.getEditor().getText(),Integer.parseInt(txtHorraire.getText()),comboFiliere.getSelectionModel().getSelectedItem().getID(),comboTdc.getSelectionModel().getSelectedItem().getID(),comboMatiere.getSelectionModel().getSelectedItem().getID());
-            lblTitle.setText("vous avez inserer la seance de " + comboTdc.getSelectionModel().getSelectedItem().getLabel() + " de " + comboMatiere.getSelectionModel().getSelectedItem().getLabel() + " du " + datePicker.getEditor().getText() + "dispenser a la classe de " + comboFiliere.getSelectionModel().getSelectedItem().getLabel() );
-        } catch (SQLException e) {
-            e.printStackTrace();
+            if(dateChecker(datePicker.getEditor().getText()) && horraireChecked(txtHorraire.getText()) && commentChecked(txtComment.getText())){
+                try {
+                    creator.ServiceCreateCour(txtComment.getText(),datePicker.getEditor().getText(),Integer.parseInt(txtHorraire.getText()),comboFiliere.getSelectionModel().getSelectedItem().getID(),comboTdc.getSelectionModel().getSelectedItem().getID(),comboMatiere.getSelectionModel().getSelectedItem().getID());
+                    lblTitle.setText("vous avez inserer la seance de " + comboTdc.getSelectionModel().getSelectedItem().getLabel() + " de " + comboMatiere.getSelectionModel().getSelectedItem().getLabel() + " du " + datePicker.getEditor().getText() + "dispenser a la classe de " + comboFiliere.getSelectionModel().getSelectedItem().getLabel() );
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }else{
+                lblTitle.setText("vous n'avez pas rempli tout les champs");
+            }
+
         }
 
+        public Boolean dateChecker(String dateChecked){
+            String checkedDate = dateChecked;
+            Boolean isCheck = false;
+            if(checkedDate.isEmpty()){
+               isCheck=false;
+            }else {
+                isCheck =true;
+            }
+            return isCheck;
+        }
+
+        public boolean horraireChecked(String horraireChecked){
+            String checkedHorraire = horraireChecked;
+            boolean isCheck = false;
+            if(horraireChecked.isEmpty()){
+                isCheck =false;
+            }else{
+                isCheck = true;
+            }
+            return isCheck;
+        }
+
+        public boolean commentChecked(String commentChecked){
+        String checkedComment = commentChecked;
+        boolean isCheck = false;
+        if(commentChecked.isEmpty()){
+            isCheck =false;
+        }else{
+            isCheck = true;
+        }
+        return isCheck;
     }
     }
 

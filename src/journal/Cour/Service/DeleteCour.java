@@ -16,7 +16,7 @@ public class DeleteCour {
         try {
             preparedStatement = conn.get().prepareStatement(query);
             preparedStatement.setInt(1,id);
-            preparedStatement.executeQuery();
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
 
