@@ -1,15 +1,16 @@
 package journal.Cour.GUI;
 
 import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 import journal.Cour.GUI.DataClass.CourObservable;
@@ -37,7 +38,9 @@ public class ReadCourController implements Initializable {
         TableColumn tdcCol = new TableColumn("COUR");
         TableColumn matiereCol = new TableColumn("MATIERE");
         TableColumn commentaireCol = new TableColumn("COMMENTAIRE");
-        courListView.getColumns().addAll(dateCol,tempsCol,filiereCol,tdcCol,matiereCol,commentaireCol);
+        TableColumn ButonnCol = new TableColumn("");
+        ButonnCol.setSortable(false);
+        courListView.getColumns().addAll(dateCol,tempsCol,filiereCol,tdcCol,matiereCol,commentaireCol,ButonnCol);
 
 
 
@@ -61,6 +64,15 @@ public class ReadCourController implements Initializable {
         courListView.setItems(cour);
 
 
+        ButonnCol.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<CourObservable, Boolean>, ObservableValue<Boolean>>() {
+            @Override public ObservableValue<Boolean> call(TableColumn.CellDataFeatures<CourObservable, Boolean> features) {
+                return new SimpleBooleanProperty(features.getValue() != null);
+            }
+        });
+
+
+
+
         dateCol.setCellValueFactory(new PropertyValueFactory<CourObservable,String>("date"));
         tempsCol.setCellValueFactory(new PropertyValueFactory<CourObservable,String>("temps"));
         filiereCol.setCellValueFactory(new PropertyValueFactory<CourObservable,String>("filiere"));
@@ -68,7 +80,43 @@ public class ReadCourController implements Initializable {
         matiereCol.setCellValueFactory(new PropertyValueFactory<CourObservable,String>("matiere"));
         commentaireCol.setCellValueFactory(new PropertyValueFactory<CourObservable,String>("commentaire"));
 
+        ButonnCol.setCellFactory(
+                new Callback<TableColumn<CourObservable, Boolean>, TableCell<CourObservable, Boolean>>() {
 
+                    @Override
+                    public TableCell<CourObservable, Boolean> call(TableColumn<CourObservable, Boolean> p) {
+                        return new ButtonCell();
+                    }
+
+                });
 
     }
+
+    //Define the button cell
+    private class ButtonCell extends TableCell<CourObservable, Boolean> {
+
+        final Button cellButton = new Button("Delete");
+
+        ButtonCell() {
+
+            cellButton.setOnAction(new EventHandler<ActionEvent>() {
+
+                @Override
+                public void handle(ActionEvent t) {
+                    // do something when button clicked
+                    //...
+                }
+            });
+        }
+
+        //Display button if the row is not empty
+        @Override
+        protected void updateItem(Boolean t, boolean empty) {
+            super.updateItem(t, empty);
+            if(!empty){
+                setGraphic(cellButton);
+            }
+        }
+    }
 }
+
