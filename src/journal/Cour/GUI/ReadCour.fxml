@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 
-
-<TableView fx:id="courListView" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="journal.Cour.GUI.ReadCourController" />
+<TableView fx:id="courListView" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="journal.Cour.GUI.ReadCourController">
+   <columns>
+      <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Date" />
+      <TableColumn fx:id="tempColumn" prefWidth="75.0" text="Temps" />
+      <TableColumn fx:id="filiereColumn" prefWidth="75.0" text="Filiere" />
+      <TableColumn fx:id="courColumn" prefWidth="75.0" text="Cour" />
+      <TableColumn fx:id="matiereColumn" prefWidth="75.0" text="Matiere" />
+      <TableColumn fx:id="commentColumn" prefWidth="121.0" text="Commentaire" />
+      <TableColumn fx:id="deleteColumn" prefWidth="103.0" text="Delete" />
+   </columns>
+</TableView>

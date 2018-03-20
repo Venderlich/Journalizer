@@ -15,9 +15,9 @@ import java.util.ArrayList;
 
 public class ReadCour {
 
-    ReadFiliere readerFiliere = new ReadFiliere();
-    ReadTypeDeCour readerTypeDeCour = new ReadTypeDeCour();
-    ReadMatiere readerMatiere =new ReadMatiere();
+    private ReadFiliere readerFiliere = new ReadFiliere();
+    private ReadTypeDeCour readerTypeDeCour = new ReadTypeDeCour();
+    private ReadMatiere readerMatiere =new ReadMatiere();
 
     SQLiteConnectionProvider conn = new SQLiteConnectionProvider();
 
@@ -29,7 +29,7 @@ public class ReadCour {
         cour.setTemps(rs.getInt("Temps"));
         cour.setFiliere(readerFiliere.filiereById(rs.getInt("IDFiliere")));
         cour.setTypeDeCour(readerTypeDeCour.typeDeCourById(rs.getInt("IDTypeDeCour")));
-        cour.setMatiere(readerMatiere.matiereById(rs.getInt(rs.getInt("IDMatiere"))));
+        cour.setMatiere(readerMatiere.matiereById(rs.getInt("IDMatiere")));
         return cour;
     }
 

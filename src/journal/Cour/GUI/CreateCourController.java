@@ -74,7 +74,7 @@ public class CreateCourController implements Initializable {
         }
         comboMatiere.setButtonCell(new SimpleListMatiere());
         comboMatiere.setCellFactory(listView -> new SimpleListMatiere());
-        comboMatiere.getSelectionModel().selectFirst();
+        comboMatiere.getSelectionModel();
 
         ReadFiliere lectorFiliere = new ReadFiliere();
         ObservableList<Filiere> filiere = comboFiliere.getItems();
@@ -89,7 +89,7 @@ public class CreateCourController implements Initializable {
         }
         comboFiliere.setButtonCell(new SimpleListFiliere());
         comboFiliere.setCellFactory(listView -> new SimpleListFiliere());
-        comboFiliere.getSelectionModel().selectFirst();
+        comboFiliere.getSelectionModel();
 
         ReadTypeDeCour lectorTdc = new ReadTypeDeCour();
         ObservableList<TypeDeCour> tdc = comboTdc.getItems();
@@ -104,7 +104,7 @@ public class CreateCourController implements Initializable {
         }
         comboTdc.setButtonCell(new SimpleListTypeDeCour());
         comboTdc.setCellFactory(listView -> new SimpleListTypeDeCour());
-        comboTdc.getSelectionModel().selectFirst();
+        comboTdc.getSelectionModel();
 
         txtHorraire.textProperty().addListener(new ChangeListener<String>() {
             public void changed(ObservableValue<? extends String> observable, String oldValue,

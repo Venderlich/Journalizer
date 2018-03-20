@@ -28,20 +28,31 @@ public class ReadCourController implements Initializable {
 
     @FXML
     private TableView<CourObservable> courListView;
+
+    @FXML
+    private TableColumn<CourObservable, String> dateColumn;
+
+    @FXML
+    private TableColumn<CourObservable, String> tempColumn;
+
+    @FXML
+    private TableColumn<CourObservable, String> filiereColumn;
+
+    @FXML
+    private TableColumn<CourObservable, String> courColumn;
+
+    @FXML
+    private TableColumn<CourObservable, String> matiereColumn;
+
+    @FXML
+    private TableColumn<CourObservable, String> commentColumn;
+
+    @FXML
+    private TableColumn<CourObservable, String> deleteColumn;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ReadCour lector = new ReadCour();
-
-        TableColumn dateCol = new TableColumn("DATE");
-        TableColumn tempsCol = new TableColumn("TEMPS");
-        TableColumn filiereCol = new TableColumn("FILIERE");
-        TableColumn tdcCol = new TableColumn("COUR");
-        TableColumn matiereCol = new TableColumn("MATIERE");
-        TableColumn commentaireCol = new TableColumn("COMMENTAIRE");
-        TableColumn ButonnCol = new TableColumn("");
-        ButonnCol.setSortable(false);
-        courListView.getColumns().addAll(dateCol,tempsCol,filiereCol,tdcCol,matiereCol,commentaireCol,ButonnCol);
-
 
 
         ObservableList<CourObservable> cour = observableArrayList();{
@@ -64,59 +75,42 @@ public class ReadCourController implements Initializable {
         courListView.setItems(cour);
 
 
-        ButonnCol.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<CourObservable, Boolean>, ObservableValue<Boolean>>() {
-            @Override public ObservableValue<Boolean> call(TableColumn.CellDataFeatures<CourObservable, Boolean> features) {
-                return new SimpleBooleanProperty(features.getValue() != null);
-            }
-        });
 
 
+        dateColumn.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
+        tempColumn.setCellValueFactory(cellData -> cellData.getValue().tempsProperty());
+        filiereColumn.setCellValueFactory(cellData -> cellData.getValue().filiereProperty());
+        courColumn.setCellValueFactory(cellData -> cellData.getValue().typeDeCourProperty());
+        matiereColumn.setCellValueFactory(cellData -> cellData.getValue().matiereProperty());
+        commentColumn.setCellValueFactory(cellData -> cellData.getValue().commentaireProperty());
+        deleteColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty());
 
-
-        dateCol.setCellValueFactory(new PropertyValueFactory<CourObservable,String>("date"));
-        tempsCol.setCellValueFactory(new PropertyValueFactory<CourObservable,String>("temps"));
-        filiereCol.setCellValueFactory(new PropertyValueFactory<CourObservable,String>("filiere"));
-        tdcCol.setCellValueFactory(new PropertyValueFactory<CourObservable,String>("typeDeCour"));
-        matiereCol.setCellValueFactory(new PropertyValueFactory<CourObservable,String>("matiere"));
-        commentaireCol.setCellValueFactory(new PropertyValueFactory<CourObservable,String>("commentaire"));
-
-        ButonnCol.setCellFactory(
-                new Callback<TableColumn<CourObservable, Boolean>, TableCell<CourObservable, Boolean>>() {
-
-                    @Override
-                    public TableCell<CourObservable, Boolean> call(TableColumn<CourObservable, Boolean> p) {
-                        return new ButtonCell();
-                    }
-
-                });
-
-    }
+        deleteColumn.setCellFactory(_p -> new ButtonCell());
+        }
 
     //Define the button cell
-    private class ButtonCell extends TableCell<CourObservable, Boolean> {
+    private class ButtonCell extends TableCell<CourObservable, String> {
 
         final Button cellButton = new Button("Delete");
 
         ButtonCell() {
+            cellButton.setOnAction(t -> {
+                int i = Integer.parseInt(deleteColumn.getTableView().getId());
 
-            cellButton.setOnAction(new EventHandler<ActionEvent>() {
-
-                @Override
-                public void handle(ActionEvent t) {
-                    // do something when button clicked
-                    //...
-                }
             });
         }
 
         //Display button if the row is not empty
         @Override
-        protected void updateItem(Boolean t, boolean empty) {
+        protected void updateItem(String t, boolean empty) {
             super.updateItem(t, empty);
             if(!empty){
                 setGraphic(cellButton);
             }
         }
     }
-}
+
+    }
+
+
 
