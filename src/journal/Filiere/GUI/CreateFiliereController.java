@@ -22,8 +22,6 @@ public class CreateFiliereController implements Initializable {
 
     @FXML
     private Label lblInfo;
-//    @FXML
-//    private ComboBox<Matiere> comMatiere;
 
     CreateFiliere creator = new CreateFiliere();
     @Override
@@ -31,44 +29,29 @@ public class CreateFiliereController implements Initializable {
     }
 
     public void createFiliere(ActionEvent event){
-        try {
-            creator.ServiceCreateFiliere(txtFiliere.getText());
-            lblInfo.setText("Vous avez inserez la filiére " + txtFiliere.getText());
-        } catch (SQLException e) {
-            e.printStackTrace();
+        if(isFormReady()){
+            try {
+                creator.ServiceCreateFiliere(txtFiliere.getText());
+                lblInfo.setText("Vous avez inserez la filiére " + txtFiliere.getText());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }else {
+            lblInfo.setText("Veuillez remplir le champ");
         }
+
 
     }
 
+    public boolean isFormReady(){
+        Boolean isCheck;
+        String filiereChecked = txtFiliere.getText();
+        if(filiereChecked.isEmpty()){
+            isCheck =false;
+        }else {
+            isCheck =true;
+        }
+        return isCheck;
+    }
 
-//    @Override
-//    public void initialize(URL location, ResourceBundle resources) {
-//
-//        ReadMatiere lector = new ReadMatiere();
-//        ObservableList<Matiere> matiere = comMatiere.getItems();
-//        int i = 0;
-//        try{
-//            while ( i < lector.listMatiere().size()){
-//                matiere.add(lector.listMatiere().get(i));
-//
-//                i = i + 1;}
-//        } catch (SQLException e){
-//
-//        }
-//        comMatiere.setButtonCell(new SimpleListMatiere());
-//        comMatiere.setCellFactory(listView -> new SimpleListMatiere());
-//        comMatiere.getSelectionModel().selectFirst();
-//
-//
-//    }
-//
-//    public void createFiliere(ActionEvent event){
-//        try {
-//            creator.ServiceCreateFiliere(txtFiliere.getText(),comMatiere.getSelectionModel().getSelectedItem().getID());
-//            lblInfo.setText("Vous avez inserez la filiére " + txtFiliere.getText());
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
 }

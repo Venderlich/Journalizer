@@ -28,12 +28,26 @@ public class CreateMatiereController implements Initializable {
     }
 
     public void createMatiere(ActionEvent event){
-        try {
-            creator.ServiceCreateMatiere(txtMatiere.getText());
-            lblInfo.setText("Vous avez inserez la filiére " + txtMatiere.getText());
-        } catch (SQLException e) {
-            e.printStackTrace();
+        if(isFormReady()){
+            try {
+                creator.ServiceCreateMatiere(txtMatiere.getText());
+                lblInfo.setText("Vous avez inserez la matiere " + txtMatiere.getText());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }else {
+            lblInfo.setText("veuillez remplir le champs");
         }
+    }
 
+    public boolean isFormReady(){
+        Boolean isCheck;
+        String matiereChecked = txtMatiere.getText();
+        if(matiereChecked.isEmpty()){
+            isCheck =false;
+        }else {
+            isCheck =true;
+        }
+        return isCheck;
     }
 }

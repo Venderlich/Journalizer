@@ -176,5 +176,5 @@ public class CreateCourController implements Initializable {
         }
         return isCheck;
     }
-    }
+}
 
