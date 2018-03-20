@@ -3,6 +3,7 @@ package journal.TypeDeCour.Service;
 import journal.DI.SQLiteConnectionProvider;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class CreateTypeDeCour {
@@ -24,4 +25,27 @@ public class CreateTypeDeCour {
             preparedStatement.close();
         }
     }
+
+    public Boolean isExistent(String labelTDC) throws SQLException{
+        String query = "SELECT * FROM TypeDeCour WHERE LabelTDC = ?";
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            preparedStatement = conn.get().prepareStatement(query);
+            preparedStatement.setString(1, labelTDC);
+
+            resultSet = preparedStatement.executeQuery();
+
+            return resultSet.next();
+        } catch (SQLException e) {
+            return false;
+        } finally {
+            assert preparedStatement != null;
+            assert resultSet != null;
+            preparedStatement.close();
+            resultSet.close();
+        }
+    }
 }
+

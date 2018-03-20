@@ -42,16 +42,25 @@ public class CreateTypeDeCourController implements Initializable{
         });
     }
     public void createTypeDeCour(ActionEvent event){
-        if(isFormReady()){
-            try {
-                creator.CreateTypeDeCours(txtTDC.getText(),Double.parseDouble(txtRapport.getText()));
-                lblInfo.setText("Vous avez inserez le Type de cour " + txtTDC.getText());
+        try {
+            if(!creator.isExistent(txtTDC.getText())){
+                if(isFormReady()){
+                    try {
+                        creator.CreateTypeDeCours(txtTDC.getText(),Double.parseDouble(txtRapport.getText()));
+                        lblInfo.setText("Vous avez inserez le Type de cour " + txtTDC.getText());
 
-            } catch (SQLException e) {
-                e.printStackTrace();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    lblInfo.setText("Veuillez remplire tout les champs");
+                }
+            }else {
+                lblInfo.setText("Ce champs existe deja");
             }
-        }else{
-            lblInfo.setText("Veuillez remplire tout les champs");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
 
